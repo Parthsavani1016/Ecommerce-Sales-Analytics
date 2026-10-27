@@ -75,6 +75,17 @@ Ecommerce-Sales-Analytics/
 9. Prepare DAX measures and a three-page Power BI dashboard design.
 10. Translate findings into business recommendations.
 
+## Project workflow
+
+```mermaid
+flowchart TD
+    A["Source CSV"] --> B["Python notebook: validate and analyze"]
+    B --> C["SQLite database"]
+    C --> D["SQL analysis"]
+    B --> E["Cleaned CSV"]
+    E --> F["Power BI dashboard plan and DAX measures"]
+```
+
 ## Dashboard plan
 
 ### Page 1 — Executive Overview
@@ -86,7 +97,21 @@ Top products, product profitability, category profitability, discount analysis.
 ### Page 3 — Customer & Regional Analysis
 Top customers, top cities, regional profit, payment behavior.
 
+## Dashboard screenshots
+
+The three-page Power BI dashboard is currently documented as a plan. Screenshots can be added here as the pages are built:
+
+- **Executive Overview:** KPI cards, sales trends, and performance by region, category, and payment method.
+- **Product Analysis:** Product and category performance, profitability, and discounts.
+- **Customer & Regional Analysis:** Customers, cities, regional profit, and payment behavior.
+
+See the [Power BI dashboard guide](powerbi/PowerBI_Dashboard_Guide.md) for the proposed design and measures.
+
 ## Run the project
+
+### Reproducibility note
+
+The source CSV is not included in this repository. To reproduce the analysis, obtain the original dataset separately and place it at `data/raw/Ecommerce_Sales_Data_2024_2025.csv`. Install the dependencies in `requirements.txt`, then run `python/ecommerce_analysis.ipynb`. The notebook generates a local SQLite database and a cleaned CSV for the Power BI workflow. Results may differ if the input data differs from the original dataset.
 
 Clone the repository and install dependencies:
 
