@@ -83,7 +83,7 @@ flowchart TD
     B --> C["SQLite database"]
     C --> D["SQL analysis"]
     B --> E["Cleaned CSV"]
-    E --> F["Power BI dashboard plan"]
+    E --> F["Power BI dashboard plan and DAX measures"]
 ```
 
 ## Dashboard plan
@@ -111,7 +111,7 @@ See the [Power BI dashboard guide](powerbi/PowerBI_Dashboard_Guide.md) for the p
 
 ### Reproducibility note
 
-The source CSV is not included in this repository. To reproduce the analysis, obtain the original dataset separately and place it at `data/raw/Ecommerce_Sales_Data_2024_2025.csv`. Install the dependencies in `requirements.txt`, then run `python/ecommerce_analysis.ipynb`. The notebook generates a local SQLite database and a cleaned CSV for the Power BI workflow. Results may differ if the input data differs from the original dataset.
+The source CSV is not included in this repository, and its source and redistribution licence have not been confirmed. To reproduce the analysis, obtain the original dataset separately and place it at `data/raw/Ecommerce_Sales_Data_2024_2025.csv`. Install the dependencies in `requirements.txt`, then run `python/ecommerce_analysis.ipynb`. The notebook generates a local SQLite database and a cleaned CSV for the Power BI workflow. Results may differ if the input data differs from the original dataset.
 
 Clone the repository and install dependencies:
 
