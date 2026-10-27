@@ -83,7 +83,7 @@ flowchart TD
     B --> C["SQLite database"]
     C --> D["SQL analysis"]
     B --> E["Cleaned CSV"]
-    E --> F["Power BI dashboard plan and DAX measures"]
+    E --> F["Power BI dashboard plan"]
 ```
 
 ## Dashboard plan
@@ -135,7 +135,7 @@ Open:
 python/ecommerce_analysis.ipynb
 ```
 
-Running the notebook creates the SQLite database locally as:
+Running the notebook creates the SQLite database in the notebook's current working directory as:
 
 ```text
 ecommerce_project.db
