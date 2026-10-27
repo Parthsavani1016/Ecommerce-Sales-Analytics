@@ -4,6 +4,26 @@ Import:
 
 `data/cleaned/ecommerce_sales_cleaned.csv`
 
+## Set up the model
+
+After running the notebook, open Power BI Desktop and import the cleaned CSV. Name the imported table `Sales`, set `Order Date` to Date, and check that `Sales` and `Profit` are numeric. Create these measures using **Modeling → New measure**:
+
+```dax
+Total Sales = SUM('Sales'[Sales])
+
+Total Profit = SUM('Sales'[Profit])
+
+Total Orders = DISTINCTCOUNT('Sales'[Order ID])
+
+Total Customers = DISTINCTCOUNT('Sales'[Customer Name])
+
+Average Order Value = DIVIDE([Total Sales], [Total Orders])
+
+Profit Margin % = DIVIDE([Total Profit], [Total Sales])
+```
+
+Format sales, profit, and average order value as appropriate for the source data; format profit margin as a percentage. The notebook counts distinct customer names, which may not represent distinct people if names are shared. Use the `Year-Month` field for the monthly trend; its `YYYY-MM` format sorts chronologically as text.
+
 ## Page 1 — Executive Overview
 
 ### KPI cards
